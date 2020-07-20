@@ -1,10 +1,17 @@
-import React from 'react'
-import { AppProps } from 'next/app'
+import { NextComponentType, NextPageContext } from 'next';
+import { AppProps } from 'next/app';
+import { Router } from 'next/dist/client/router';
+import React from 'react';
+import 'styles/index.css';
 
-import '../styles/index.css'
-
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  return <Component {...pageProps} />
+interface IMyAppProps {
+  Component: NextComponentType<NextPageContext, any, any>;
+  pageProps: any;
+  router: Router;
 }
 
-export default MyApp
+const MyApp: React.FC<IMyAppProps> = ({ Component, pageProps }: AppProps) => {
+  return <Component {...pageProps} />;
+};
+
+export default MyApp;
