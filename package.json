@@ -7,10 +7,13 @@
     "start": "next start",
     "stage": "yarn build; yarn start",
     "type-check": "tsc",
-    "lint": "eslint src --ext .ts,.tsx",
+    "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "isomorphic-unfetch": "3.0.0",
     "next": "^9.4.4",
     "react": "^16.12.0",
