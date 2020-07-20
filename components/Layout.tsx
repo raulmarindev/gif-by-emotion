@@ -1,22 +1,30 @@
-import * as React from 'react'
-import Head from 'next/head'
+import CustomFooter from './CustomFooter';
+import CustomHeader from './CustomHeader';
+import Head from 'next/head';
+import Link from 'next/link';
+import * as React from 'react';
 
 type Props = {
-  title?: string
-}
+  title?: string;
+};
 
 const Layout: React.FunctionComponent<Props> = ({
   children,
   title = 'This is the default title',
 }) => (
-  <div>
+  <>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    {children}
-  </div>
-)
 
-export default Layout
+    <main className="container px-4 mx-auto lg:px-32">
+      <CustomHeader />
+      {children}
+      <CustomFooter />
+    </main>
+  </>
+);
+
+export default Layout;
