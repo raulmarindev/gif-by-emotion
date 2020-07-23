@@ -1,0 +1,21 @@
+{
+    "build": {
+      "env": {
+        "NEXT_PUBLIC_COMPUTER_VISION_API_SUBSCRIPTION_KEY": "@next_public_computer_vision_api_subscription_key",
+        "NEXT_PUBLIC_COMPUTER_VISION_API_ENDPOINT": "@next_public_computer_vision_api_endpoint",
+        "NEXT_PUBLIC_GIPHY_API_KEY": "@next_public_giphy_api_key"
+      }
+    },
+    "routes": [
+      {
+        "src": "/*",
+        "headers": {
+          "cache-control": "max-age=31536000",
+          "X-XSS-Protection": "1; mode=block",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        }
+      }
+    ]
+  }
+  
