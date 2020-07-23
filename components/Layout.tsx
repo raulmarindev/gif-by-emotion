@@ -1,14 +1,13 @@
 import CustomFooter from './CustomFooter';
 import CustomHeader from './CustomHeader';
 import Head from 'next/head';
-import Link from 'next/link';
 import * as React from 'react';
 
-type Props = {
+type ILayoutProps = {
   title?: string;
 };
 
-const Layout: React.FunctionComponent<Props> = ({
+const Layout: React.FC<ILayoutProps> = ({
   children,
   title = 'This is the default title',
 }) => (
@@ -19,11 +18,9 @@ const Layout: React.FunctionComponent<Props> = ({
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
 
-    <main className="container px-4 mx-auto lg:px-32">
-      <CustomHeader />
-      {children}
-      <CustomFooter />
-    </main>
+    <CustomHeader />
+    <main className="py-8 text-center">{children}</main>
+    <CustomFooter />
   </>
 );
 
