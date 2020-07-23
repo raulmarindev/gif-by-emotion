@@ -3,3 +3,13 @@
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
+
+div#__next {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1; /* Or flex-grow: 1;*/
+}
