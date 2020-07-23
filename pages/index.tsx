@@ -2,47 +2,46 @@ import styles from './index.module.css';
 import Layout from '../components/Layout';
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CustomLinkButton from 'components/CustomLinkButton';
 import { NextPage } from 'next';
-import Link from 'next/link';
 import * as React from 'react';
 
 const IndexPage: NextPage = () => {
   return (
     <Layout title="Find gifs related to your emotion">
-      <h2 className="text-3xl lg:text-5xl">
-        Take a selfie and get a reaction GIF
+      <h2 className="text-3xl lg:text-4xl">
+        Take a <span className="font-semibold text-purple-600">selfie</span> and
+        get a{' '}
+        <span className="font-semibold text-purple-600">reaction GIF</span>
       </h2>
-      <div className={`${styles.gifExamples} pb-64`}>
+      <div
+        className={`${styles.gifExamples} pt-4 pb-56 lg:pb-64 w-10/12 md:w-6/12 lg:w-3/12`}
+      >
         <img
-          className="w-10/12 md:w-6/12 lg:w-3/12"
           alt="Bitch please"
+          className="rounded w-72 lg:w-96"
           src="/images/bitch-please.gif"
         />
         <img
-          className="w-10/12 md:w-6/12 lg:w-3/12"
           alt="Cute Dog"
+          className="rounded w-72 lg:w-96"
           src="/images/cute-dog.gif"
         />
         <img
-          className="w-10/12 md:w-6/12 lg:w-3/12"
           alt="What"
+          className="rounded w-72 lg:w-96"
           src="/images/what.gif"
         />
         <img
-          className="w-10/12 md:w-6/12 lg:w-3/12"
           alt="Smug"
+          className="rounded w-72 lg:w-96"
           src="/images/smug.gif"
         />
       </div>
-      <div>
-        <Link href="search">
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a className="inline-block px-4 py-2 font-bold text-center text-white bg-blue-500 rounded hover:bg-blue-700">
-            <FontAwesomeIcon icon={faArrowAltCircleRight} size="lg" />
-            &nbsp;Click here to get started{' '}
-          </a>
-        </Link>
-      </div>
+      <CustomLinkButton href="search">
+        <FontAwesomeIcon icon={faArrowAltCircleRight} size="lg" />
+        &nbsp;Click here to get started{' '}
+      </CustomLinkButton>
     </Layout>
   );
 };
