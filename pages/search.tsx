@@ -19,7 +19,7 @@ const preventDefault = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 
 const SearchPage: NextPage = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const webcamRef = useRef<Webcam>(null);
+  const webcamRef = useRef<Webcam & HTMLVideoElement>(null);
   const router = useRouter();
 
   const captureImage = useCallback(async () => {
