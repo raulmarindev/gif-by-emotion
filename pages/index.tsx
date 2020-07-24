@@ -15,26 +15,26 @@ const IndexPage: NextPage = () => {
         <span className="font-semibold text-purple-600">reaction GIF</span>
       </h2>
       <div
-        className={`${styles.gifExamples} pt-4 pb-56 lg:pb-64 w-10/12 md:w-6/12 lg:w-3/12`}
+        className={`${styles.gifExamples} mx-auto pt-4 pb-56 lg:pb-64 w-10/12 md:w-6/12 lg:w-3/12`}
       >
         <img
           alt="Bitch please"
-          className="rounded w-72 lg:w-96"
+          className="rounded w-72 sm:w-84 lg:w-96"
           src="/images/bitch-please.gif"
         />
         <img
           alt="Cute Dog"
-          className="rounded w-72 lg:w-96"
+          className="rounded w-72 sm:w-84 lg:w-96"
           src="/images/cute-dog.gif"
         />
         <img
           alt="What"
-          className="rounded w-72 lg:w-96"
+          className="rounded w-72 sm:w-84 lg:w-96"
           src="/images/what.gif"
         />
         <img
           alt="Smug"
-          className="rounded w-72 lg:w-96"
+          className="rounded w-72 sm:w-84 lg:w-96"
           src="/images/smug.gif"
         />
       </div>

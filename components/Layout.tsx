@@ -18,9 +18,11 @@ const Layout: React.FC<ILayoutProps> = ({
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
 
-    <CustomHeader />
-    <main className="py-8 text-center">{children}</main>
-    <CustomFooter />
+    <div id="whole">
+      <CustomHeader />
+      <main className="py-8 text-center">{children}</main>
+      <CustomFooter />
+    </div>
   </>
 );
 
