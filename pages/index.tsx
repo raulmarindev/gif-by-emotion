@@ -19,22 +19,22 @@ const IndexPage: NextPage = () => {
       >
         <img
           alt="Bitch please"
-          className="rounded w-72 sm:w-84 lg:w-96"
+          className="rounded w-80 sm:w-84 lg:w-96"
           src="/images/bitch-please.gif"
         />
         <img
           alt="Cute Dog"
-          className="rounded w-72 sm:w-84 lg:w-96"
+          className="rounded w-80 sm:w-84 lg:w-96"
           src="/images/cute-dog.gif"
         />
         <img
           alt="What"
-          className="rounded w-72 sm:w-84 lg:w-96"
+          className="rounded w-80 sm:w-84 lg:w-96"
           src="/images/what.gif"
         />
         <img
           alt="Smug"
-          className="rounded w-72 sm:w-84 lg:w-96"
+          className="rounded w-80 sm:w-84 lg:w-96"
           src="/images/smug.gif"
         />
       </div>
