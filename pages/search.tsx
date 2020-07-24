@@ -8,8 +8,8 @@ import React, { useCallback, useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 
 const videoConstraints = {
-  width: 1280,
-  height: 720,
+  width: 640,
+  height: 360,
   facingMode: 'user',
 };
 
@@ -50,10 +50,10 @@ const SearchPage: NextPage = () => {
         <div className="w-full mb-4">
           <Webcam
             audio={false}
-            height={720}
+            height={360}
             ref={webcamRef}
             screenshotFormat="image/jpeg"
-            width={1280}
+            width={640}
             videoConstraints={videoConstraints}
           />
         </div>
