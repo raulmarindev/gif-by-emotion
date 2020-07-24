@@ -4,7 +4,7 @@
 /* purgecss end ignore */
 @tailwind utilities;
 
-div#__next {
+body > div:first-child {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
