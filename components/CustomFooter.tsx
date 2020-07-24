@@ -5,22 +5,17 @@ const CustomFooter: React.FC = () => {
     <footer className="px-4 py-12 mt-6 text-purple-200 bg-purple-500">
       <div className="container flex justify-between mx-auto">
         <div>
-          An{' '}
+          Made with ♥ by{' '}
           <a
-            href="https://github.com/aholachek/gif-search-backend"
+            href="https://github.com/raulmarindev/gif-by-emotion"
             target="_blank"
             rel="noreferrer"
           >
-            experimental app
+            @raulmarindev
           </a>
-          made by{' '}
+          . Thank you,{' '}
           <a href="http://alex.holachek.com/" target="_blank" rel="noreferrer">
-            <img
-              className="inline-block w-8"
-              src="images/alex.png"
-              alt="author"
-            />
-            &nbsp;Alex
+            Alex Holachek
           </a>
           .
         </div>
