@@ -1,6 +1,8 @@
 import { GiphyFetch } from '@giphy/js-fetch-api';
 import { IGif } from '@giphy/js-types';
 import { Gif } from '@giphy/react-components';
+import { EmotionType } from 'api/emotion';
+import { getRandomReaction } from 'api/reactionsByEmotion';
 import React, { useEffect, useState } from 'react';
 
 const giphyApiKey = process.env.NEXT_PUBLIC_GIPHY_API_KEY;
@@ -11,20 +13,21 @@ if (!giphyApiKey) {
 const giphyFetch = new GiphyFetch(giphyApiKey);
 
 const GiphyGif: React.FC<{
-  searchTerm: string;
+  emotion: EmotionType;
   onGifVisible: (
     gif: IGif,
     e?: React.SyntheticEvent<HTMLElement, Event> | undefined
   ) => void;
-}> = ({ searchTerm, onGifVisible }) => {
+}> = ({ emotion, onGifVisible }) => {
   const [gif, setGifList] = useState<IGif | null>(null);
   useEffect(() => {
     async function retrieveGif() {
       try {
-        const { data } = await giphyFetch.random({
-          tag: searchTerm,
-        });
-        setGifList(data);
+        const randomReaction = getRandomReaction(emotion);
+
+        const { data } = await giphyFetch.gifs('reactions', randomReaction);
+
+        setGifList(data[Math.floor(Math.random() * data.length)]);
       } catch (error) {
         console.log(error);
       }

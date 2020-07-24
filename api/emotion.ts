@@ -63,10 +63,11 @@ export type EmotionType = keyof Emotion;
 function getDominantEmotions(emotions: IExtendedEmotion): EmotionType[] {
   const emotionsArray = [];
 
+  console.log(emotions);
   if (emotions) {
     for (const prop in emotions) {
       let weight = 0;
-      if (emotions[prop]) {
+      if (emotions[prop] && prop !== 'neutral') {
         weight = emotions[prop]!;
       }
       emotionsArray.push({

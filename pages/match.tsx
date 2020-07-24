@@ -10,9 +10,8 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 
 const MatchPage: NextPage<{
-  emotionName1: EmotionType;
-  emotionName2: EmotionType;
-}> = ({ emotionName1, emotionName2 }) => {
+  emotionName: EmotionType;
+}> = ({ emotionName }) => {
   const [base64Image, setBase64Image] = useState('');
   const [isGifVisible, setIsGifVisible] = useState(false);
 
@@ -22,17 +21,13 @@ const MatchPage: NextPage<{
 
   return (
     <Layout title="Find gifs related to your emotion">
-      <YourEmotionDisplay
-        base64Image={base64Image}
-        emotionName1={emotionName1}
-        emotionName2={emotionName2}
-      />
+      <YourEmotionDisplay base64Image={base64Image} emotionName={emotionName} />
       {/*<GifCarousel imageSrc={base64Image} />*/}
       <GiphyGif
         onGifVisible={() => {
           setIsGifVisible(true);
         }}
-        searchTerm={emotionName1 === 'neutral' ? emotionName2 : emotionName1}
+        emotion={emotionName}
       />
       {isGifVisible && (
         <CustomLinkButton href="search">
@@ -49,8 +44,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   // Pass data to the page via props
   return {
     props: {
-      emotionName1: query.emotionName1 ? query.emotionName1 : '',
-      emotionName2: query.emotionName2 ? query.emotionName2 : '',
+      emotionName: query.emotionName ? query.emotionName : '',
     },
   };
 };

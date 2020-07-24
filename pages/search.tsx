@@ -34,8 +34,7 @@ const SearchPage: NextPage = () => {
         router.push({
           pathname: '/match',
           query: {
-            emotionName1: emotionNames[0],
-            emotionName2: emotionNames[1],
+            emotionName: emotionNames[0],
           },
         });
       } catch (error) {
