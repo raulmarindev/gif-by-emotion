@@ -4,12 +4,12 @@
 /* purgecss end ignore */
 @tailwind utilities;
 
-body > div:first-child {
+div#__next {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
 main {
-  flex-grow: 1; /* Or flex-grow: 1;*/
+  flex: 1; /* Or flex-grow: 1;*/
 }
