@@ -7,9 +7,10 @@ import { useRouter } from 'next/router';
 import React, { useCallback, useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 
-const videoConstraints = {
-  width: 640,
-  height: 360,
+const videoConstraints: MediaTrackConstraints = {
+  width: { min: 480 },
+  height: { min: 720 },
+  aspectRatio: 1.6666666667,
   facingMode: 'user',
 };
 
@@ -48,11 +49,11 @@ const SearchPage: NextPage = () => {
       <div className="w-10/12 max-w-sm pb-4 mx-auto overflow-hidden text-black bg-white rounded shadow-lg lg:w-2/4">
         <div className="w-full mb-4">
           <Webcam
+            width={480}
+            height={720}
             audio={false}
-            height={360}
             ref={webcamRef}
             screenshotFormat="image/jpeg"
-            width={640}
             videoConstraints={videoConstraints}
           />
         </div>
