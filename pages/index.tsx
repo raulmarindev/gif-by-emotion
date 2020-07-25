@@ -9,13 +9,13 @@ import * as React from 'react';
 const IndexPage: NextPage = () => {
   return (
     <Layout title="Find gifs related to your emotion">
-      <h2 className="text-3xl lg:text-4xl">
+      <h2 className="text-3xl lg:text-4xl 2xl:mb-8">
         Take a <span className="font-semibold text-purple-600">selfie</span> and
         get a{' '}
         <span className="font-semibold text-purple-600">reaction GIF</span>
       </h2>
       <div
-        className={`${styles.gifExamples} mx-auto pt-4 pb-56 lg:pb-64 w-10/12 md:w-6/12 lg:w-3/12`}
+        className={`${styles.gifExamples} mx-auto pt-4 pb-56 lg:pb-64 w-80 sm:w-84 lg:w-96`}
       >
         <img
           alt="Bitch please"
