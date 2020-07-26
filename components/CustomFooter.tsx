@@ -2,7 +2,7 @@ import React from 'react';
 
 const CustomFooter: React.FC = () => {
   return (
-    <footer className="px-4 py-12 mt-6 text-purple-200 bg-purple-500">
+    <footer className="px-4 py-12 mt-6 text-white bg-purple-500">
       <div className="container flex justify-between mx-auto">
         <div>
           Made with ♥ by{' '}
